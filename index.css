@@ -51,3 +51,58 @@ body{
 .margin-t1{
     margin-top: 1%;
 }
+
+.bold-font-700{
+    font-weight: 700;
+}
+
+.logo{
+    width: 75%;
+}
+
+.mt-1rem{
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+}
+
+.submit-button{
+    justify-content: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+hr{
+    border-top: 1px solid rgb(0 0 0 / 70%) !important;
+    width: 90%;
+}
+
+.padding-2{
+    padding:2%;
+}
+
+.padding-5{
+    padding:5%;
+}
+
+.mt-7{
+    margin-top: 7% !important;
+    margin-bottom: 0 !important;
+}
+
+.paddind-tb-1{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.acknowledgement-content p{
+    font-size: 14px;
+}
+
+.margin-t-12px{
+    margin-top: 12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    
+}
