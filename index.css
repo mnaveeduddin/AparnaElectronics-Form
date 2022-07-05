@@ -104,5 +104,28 @@ hr{
     margin-top: 12px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    
+}
+
+.mx-width-22{
+    max-width: 22% !important;
+}
+
+.mx-width-40{
+    max-width: 40% !important;
+}
+
+.margin-t-20px{
+    margin-top: 20px;
+}
+
+.height-50{
+    height: 50%;
+}
+
+.mx-width-70{
+    max-width: 70px !important;
+}
+
+.align-right{
+    text-align: right;
 }
