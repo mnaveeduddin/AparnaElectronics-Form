@@ -9,280 +9,352 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 
         <script src="./index.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
         <title>APARNA ELECTRONICS</title>
     </head>
     <body>
-        <div class="head row">
-            <div class="col-sm-3">
-                <img class="logo" src="https://i.postimg.cc/26YGy6RQ/Aparna-Elecronics-10-x-2-5-1-copy.jpg">
-            </div>
-            <div class="col-sm-9 heading-content">
-                <div class="align-center">
-                    <h5 class="bold-font-700 margin-0">APARNA ELECTRONICS & SERVICES CHANDRAPUR</h5>
-                </div>
-                <div class="align-center">
-                    <p class="margin-0" style="font-size:15px;">Contact No.: 7744954321 / 9975341232</p>
-                </div>
-                <div class="align-center">
-                    <p class="bold-font-700 margin-0" style="font-size:18px">SERVICE JOB SHEET</p>
-                </div>
-            </div>
-        </div>
-        <div class="first-section outer-border" >
-            <div class="row inner-border margin-0">
-                <div class="col-sm-3 col-xs-3">
-                    <label class="margin-0">Date:</label>
-                    <input type="date" id="date1" name="date">
-                </div>
-                <div class="col-sm-1.5">
-                    Warranty
-                    <input type="radio" id="warranty" name="warranty">
-                </div>
+        <div id="exportToPDF">
+            <div class="head row align-items-center">
                 <div class="col-sm-2">
-                    Out Warranty
-                    <input type="radio" id="warranty" name="warranty">
+                    <img class="logo" src="https://i.postimg.cc/26YGy6RQ/Aparna-Elecronics-10-x-2-5-1-copy.jpg">
                 </div>
-                <div class="col-sm-3 padding-0 mx-width-22">
-                    <label class="margin-0">Brand:</label>
-                    <input type="text" id="brand" name="brand">
-                </div>
-                <div class="col-sm-3 padding-0 mx-width-22">
-                    <label class="margin-0">Product:</label>
-                    <input type="text" id="product" name="product">
+                <div class="col-sm-8 heading-content">
+                    <div class="align-center">
+                        <h5 class="bold-font-700 margin-0">APARNA ELECTRONICS & SERVICES CHANDRAPUR</h5>
+                    </div>
+                    <div class="align-center">
+                        <p class="margin-0" style="font-size:15px;">Contact No.: 7744954321 / 9975341232</p>
+                    </div>
+                    <div class="align-center">
+                        <p class="bold-font-700 margin-0" style="font-size:18px">SERVICE JOB SHEET</p>
+                    </div>
                 </div>
             </div>
-            <div class="row margin-0 inner-border">
-                <h6>CUSTOMER INFORMATION</h6>
-            </div>
-            <div class="row margin-0">
-                <div class="col padding-0">
-                    <div class="inner-border height-33">
-                        <label>Contact Name :</label>
-                        <input type="text" id="contact-name">
+            <div class="first-section outer-border" >
+                <div class="row inner-border margin-0">
+                    <div class="col-2.5 padding-lr-15">
+                        <label class="margin-0">Date:</label>
+                        <input type="date" id="date1" name="date">
                     </div>
-                    <div class="inner-border height-33">
-                        <label>Email :</label>
-                        <input type="email" id="email">
+                    <div class="col-1.5">
+                        Warranty
+                        <input type="radio" id="warranty" name="warranty">
                     </div>
-                    <div class="inner-border height-34">
-                        <label>Phone / Mobile:</label>
-                        <input type="number" id="phoneNumber">
+                    <div class="col-2">
+                        Out Warranty
+                        <input type="radio" id="warranty" name="warranty">
+                    </div>
+                    <div class="col-3">
+                        <label class="margin-0">Brand:</label>
+                        <!-- <input type="text" id="brand" name="brand"> -->
+                        <input list="brands" name="brand">
+                            <datalist id="brands">
+                                <option value="REALME">
+                                <option value="ASUS">
+                                <option value="DIZO">
+                                <option value="ACER">
+                                <option value="NOTHING">
+                                <option value="BENQ">
+                                <option value="SYSKA">
+                                <option value="VIEWSONIC">
+                                <option value="NEC">
+                                <option value="HITACHI">
+                                <option value="DELL">
+                                <option value="HP">
+                                <option value="LENOVO">
+                                <option value="INFINIX">
+                                <option value="OPTOMA">
+                                <option value="MARQ">                                
+                            </datalist>
+                    </div>
+                    <div class="col-3">
+                        <label class="margin-0">Product:</label>
+                        <!-- <input type="text" id="product" name="product"> -->
+                        <input list="products" name="product">
+                            <datalist id="products">
+                                <option value="MOBILE">
+                                <option value="LAPTOP">
+                                <option value="GAMING LAPTOP">
+                                <option value="WIRED EARPHONES">
+                                <option value="WIRELESS EARPHONES">
+                                <option value="SMART WATCH">
+                                <option value="TRIMMER">
+                                <option value="POWERBANK">
+                                <option value="SMART SCALE">
+                                <option value="SMART CAMERA">
+                                <option value="ADAPTOR">
+                                <option value="USB CABLE">
+                                <option value="PROJECTOR">
+                                <option value="SMART BAND">
+                                <option value="BATTERY">
+                                <option value="MONITOR">
+                                <option value="DESKTOP">
+                                <option value="ALL IN ONE">
+                                <option value="SOUND BAR">
+                                <option value="BT SPEAKER">
+                                <option value="TABLET / PAD">
+                                <option value="KEYBOARD">
+                                <option value="MOUSE">
+                                <option value="SMART PLUG">
+                                <option value="SMART BULB">
+                                <option value="VACCUM CLEANER">
+                                <option value="AIR PURIFIER">
+                                <option value="SMART TV STICK">
+                                <option value="TOOTH BRUSH">
+                                <option value="HAIR DRIER">
+                            </datalist>
                     </div>
                 </div>
-                <div class="col padding-0">
-                    <div class="inner-border">
-                        <label class="margin-0">Pass / Pin :</label>
-                        <input type="text" id="pass/pin">
+                <div class="row margin-0 inner-border padding-1">
+                    <h6>CUSTOMER INFORMATION</h6>
+                </div>
+                <div class="row margin-0">
+                    <div class="col padding-0">
+                        <div class="inner-border height-33 padding-1">
+                            <label>Contact Name :</label>
+                            <input type="text" id="contact-name">
+                        </div>
+                        <div class="inner-border height-33 padding-1">
+                            <label>Email :</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="inner-border height-34 padding-1">
+                            <label>Phone / Mobile:</label>
+                            <input type="number" id="phoneNumber">
+                        </div>
                     </div>
-                    <div  class="row margin-0 inner-border">
-                        <div class="col-lg-8 padding-0">
-                            <div class="row margin-0">
-                                <div class="col padding-0 mx-width-70">
-                                    <h6>Address :</h6>
-                                </div>
-                                <div class="col padding-0">
-                                    <p>Gajanan Gali,
-                                    Behind Bhagyashree Ghee Bhandaar Gol Bazaar,
-                                    Bazar Ward, Chandrapur,
-                                    Maharashtra 442402</p>
+                    <div class="col padding-0">
+                        <div class="inner-border padding-1">
+                            <label class="margin-0">Pass / Pin :</label>
+                            <input type="text" id="pass/pin">
+                        </div>
+                        <div  class="row margin-0 inner-border">
+                            <div class="col-lg-7 padding-1">
+                                <div class="row margin-0 padding-1">
+                                    <div class="col-3 padding-0 mx-width-70">
+                                        <p class="margin-0">Address :</p>
+                                    </div>
+                                    <div class="col-9 padding-0">
+                                        <textarea class="width-100" type="text" id="address" name="address" rows="3"></textarea>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-lg-5">
+                                <p class="margin-0">Zip Code</p>
+                                <input type="text" id="zipcode">
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                            <p class="mt-1rem">Zip Code</p>
-                            <p class="margin-0">442401</p>
+                        <div class="inner-border padding-1">
+                            <label class="margin-0">Accessories / Remark :</label>
+                            <input type="text" id="accessories/remark">
                         </div>
-                    </div>
-                    <div class="inner-border">
-                        <label class="margin-0">Accessories / Remark :</label>
-                        <input type="text" id="accessories/remark">
                     </div>
                 </div>
+                <!-- <div class="row hours-table margin-0 padding-1 inner-border">
+                    <p>Please ticket the preferred time, if ASC require to contact you by phone. (* base on service center operation period)</p>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Working Hours</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            <th>Sun</th>                        
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>AM</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>PM</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Night</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div> -->
             </div>
-            <!-- <div class="row hours-table margin-0 padding-1 inner-border">
-                <p>Please ticket the preferred time, if ASC require to contact you by phone. (* base on service center operation period)</p>
-                <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Working Hours</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>AM</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>PM</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>Night</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div> -->
-        </div>
-        <div class="second-section outer-border margin-t1">
-            <div class="row margin-0 inner-border">
-                <h6>PRODUCT INFORMATION</h6>
-            </div>
-            <div class="row margin-0">
-                <div class="col-lg-8 inner-border">
+            <div class="second-section outer-border margin-t1">
+                <div class="row margin-0 inner-border padding-1">
+                    <h6>PRODUCT INFORMATION</h6>
+                </div>
+                <div class="inner-border margin-0 padding-1">
                     <label class="margin-0">Serial / IMEI No. :</label>
-                    <input type="text" id="serial/imei">
+                    <input type="text" id="serial-imei">
                 </div>
-                <div class="col-lg-4 inner-border">
-                    <label class="margin-0">Model No. :</label>
-                    <input type="text" id="modelno">
-                </div>
-            </div>
-            <div class="row margin-0">
-                <div class="col padding-0">
-                    <div class="inner-border align-right padding-2">
-                        <p>Visual Inspection (mark damaged area below)</p>
+                <div class="row margin-0">
+                    <div class="col-lg-8 inner-border">
+                        <label class="margin-0">Model No. :</label>
+                        <input type="text" id="modelno">
                     </div>
-                    <div class="inner-border align-right padding-2">
+                    <div class="col-lg-4 inner-border">
                         <label class="margin-0">Purchase Date :</label>
                         <input type="date" id="purchasedate">
                     </div>
                 </div>
-                <!-- <div class="col inner-border padding-0">
-                    <p>Reported Failure Symptoms</p>
-                    <label>MEMO</label>
-                    <input type="text" id="memo">
-                </div> -->
-            </div>
-        </div>
-        <div class="third-section outer-border margin-t1">
-            <div class="row margin-0 inner-border">
-                <h6>FOR OFFICIAL USE ONLY</h6>
-            </div>
-            <div class="row margin-0">
-                <div class="col-sm-4 padding-0">
-                    <div class="inner-border padding-5 height-50">
-                        <label>Diagnosis Description</label>
-                        <textarea id="diagnosis-description" name="diagnosis-description" rows="7" cols="35"></textarea>
-                        <br>
-                        <label class="margin-t-20px">Diagnosed By </label>
-                        <input type="text" id="diagnosedby">
-                    </div>
-                    <div class="inner-border padding-5 height-50">
-                        <label>Spare Part</label>
-                        <textarea id="sparepart" name="sparepart" rows="8" cols="35"></textarea>
-                    </div>
-                </div>
-                <div class="col-sm-4 padding-0">
-                    <div class="inner-border padding-2">
-                        <label>Action Taken</label>
-                        <textarea id="actiontaken" name="actiontaken" rows="4" cols="35"></textarea>
-                        <br>
-                        <label>Action Taken By </label>
-                        <input type="text" id="actiontakenby">
-                    </div>
-                    <div class="inner-border align-center paddind-tb-1">
-                        <label class="margin-0">Start Time </label>
-                        <input type="time" id="starttime">
-                        <label class="margin-0">Date </label>
-                        <input type="date" id="date2">
-                    </div>
-                    <div class="inner-border align-center paddind-tb-1">
-                        <label class="margin-0">Finish Time </label>
-                        <input type="time" id="starttime">
-                        <label class="margin-0">Date </label>
-                        <input type="date" id="date3">
-                    </div>
-                    <div class="inner-border">
-                        <h6>CUSTOMER ACKNOWLEDGEMENT</h6>
-                    </div>
-                    <div class="acknowledgement-content inner-border">
-                        <div class="padding-2">
-                            <p class="margin-0">I have already checked and confirmed that the above mentioned
-                                product is in good repair and without any abnormal appearance or
-                                damage after this service for repair / inspection.</p>
-                            <p class="margin-0"> -Notebook appearance includes Cover, Bezel, LCD, Top Case
-                                    (included keyboard), Touch Pad and Bottom Case.</p>
-                            <p class="margin-0">-Mobile appearance includes LCD module and Battery cover.</p>
-                            <p class="margin-0">I have collected the above mentioned product and hereby agree to
-                                    close this service job.</p>
+                <div class="row margin-0">
+                    <div class="col padding-0">
+                        <div class="inner-border padding-lr-2">
+                            <p>Visual Inspection (mark damaged area below)</p>
+                            <textarea class="width-100" id="visualInspection" name="visualInspection" rows="4"></textarea>
                         </div>
-                        <div class="row space-between margin-t-12px">
-                            <div class="col padding-0">
-                                <h6>Customer's Signature</h6>
-                            </div>
-                            <div class="col padding-0">
-                                <label><h6>Date</h6></label>
-                                <input type="date" id="date4">
+                    </div>
+                    <!-- <div class="col inner-border padding-0">
+                        <p>Reported Failure Symptoms</p>
+                        <label>MEMO</label>
+                        <input type="text" id="memo">
+                    </div> -->
+                </div>
+            </div>
+            <div class="third-section outer-border margin-t1">
+                <div class="row margin-0 inner-border padding-1">
+                    <h6>FOR OFFICIAL USE ONLY</h6>
+                </div>
+                <div class="row margin-0">
+                    <div class="col-sm-4 padding-0">
+                        <div class="inner-border padding-3 height-50">
+                            <p>Diagnosis Description</p>
+                            <textarea class="width-100" id="diagnosis-description" name="diagnosis-description" rows="6"></textarea>
+                            <br>
+                            <label class="margin-t-20px">Diagnosed By </label>
+                            <input type="text" id="diagnosedby">
+                        </div>
+                        <div class="inner-border padding-3 height-50">
+                            <p>Spare Part</p>
+                            <textarea class="width-100" id="sparepart" name="sparepart" rows="8"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 padding-0">
+                        <div class="inner-border padding-3">
+                            <p>Action Taken</p>
+                            <textarea class="width-100" id="actiontaken" name="actiontaken" rows="4"></textarea>
+                            <br>
+                            <label>Action Taken By</label>
+                            <input type="text" id="actiontakenby">
+                        </div>
+                        <div class="inner-border align-center paddind-tb-1">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="margin-0">Start Time </label>
+                                    <input type="time" id="starttime">
+                                </div>
+                                <div class="col">
+                                    <label class="margin-0">Date </label>
+                                    <input type="date" id="date2">
+                                </div>
                             </div>
                         </div>
+                        <div class="inner-border align-center paddind-tb-1">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="margin-0">Finish Time </label>
+                                    <input type="time" id="starttime">
+                                </div>
+                                <div class="col">
+                                    <label class="margin-0">Date </label>
+                                    <input type="date" id="date3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-border padding-1">
+                            <h6>CUSTOMER ACKNOWLEDGEMENT</h6>
+                        </div>
+                        <div class="acknowledgement-content inner-border">
+                            <div class="padding-2">
+                                <p class="margin-0">I have already checked and confirmed that the above mentioned
+                                    product is in good repair and without any abnormal appearance or
+                                    damage after this service for repair / inspection.</p>
+                                <p class="margin-0"> -Notebook appearance includes Cover, Bezel, LCD, Top Case
+                                        (included keyboard), Touch Pad and Bottom Case.</p>
+                                <p class="margin-0">-Mobile appearance includes LCD module and Battery cover.</p>
+                                <p class="margin-0">I have collected the above mentioned product and hereby agree to
+                                        close this service job.</p>
+                            </div>
+                            <div class="row space-between margin-t-12px">
+                                <div class="signature col padding-0">
+                                    <h6>Customer's Signature</h6>
+                                </div>
+                                <div class="col padding-0">
+                                    <label><h6>Date</h6></label>
+                                    <input type="date" id="date4">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-4 padding-0">
-                    <div class="inner-border" onchange="addTotal()">
-                        <div class="row margin-0 space-between padding-2">
-                            <label>Inspection Charge</label>
-                            <input type="number" id="inspectioncharge" value="0">
+                    <div class="col-sm-4 padding-0">
+                        <div class="inner-border height-49" oninput="addTotal()">
+                            <div class="row margin-0 space-between padding-2">
+                                <label>Inspection Charge</label>
+                                <input type="number" id="inspectioncharge" value="0">
+                            </div>
+                            <div class="row margin-0 space-between padding-2">
+                                <label>Service Charge</label>
+                                <input type="number" id="servicecharge" value="0">
+                            </div>
+                            <div class="row margin-0 space-between padding-2">
+                                <label>Parts</label>
+                                <input type="number" id="parts" value="0">
+                            </div>
+                            <div class="row margin-0 space-between padding-2">
+                                <label>Labour</label>
+                                <input type="number" id="labour" value="0">
+                            </div>
+                            <hr>
+                            <div class="row margin-0 space-between padding-2">
+                                <label>Total <span>(GST included) - </span></label>
+                                <p id="total"></p>
+                            </div>
                         </div>
-                        <div class="row margin-0 space-between padding-2">
-                            <label>Service Charge</label>
-                            <input type="number" id="servicecharge" value="0">
+                        <div class="inner-border height-5 padding-1">
+                            <h6>DELIVERY</h6>
                         </div>
-                        <div class="row margin-0 space-between padding-2">
-                            <label>Parts</label>
-                            <input type="number" id="parts" value="0">
+                        <div class="inner-border padding-3 height-46">
+                            <p>Delivered By</p>
+                            <textarea class="width-100" id="deliveredby" name="deliveredby" rows="5"></textarea> <br>
+                            <h6>Aparna Electronics</h6>
+                            <label >Date</label>
+                            <input type="date" id="date5">
                         </div>
-                        <div class="row margin-0 space-between padding-2">
-                            <label>Labour</label>
-                            <input type="number" id="labour" value="0">
-                        </div>
-                        <hr>
-                        <div class="row margin-0 space-between padding-2">
-                            <label>Total <span>(GST included)</span></label>
-                            <p id="total"></p>
-                        </div>
-                    </div>
-                    <div class="inner-border">
-                        <h6>DELIVERY</h6>
-                    </div>
-                    <div class="inner-border padding-5">
-                        <label>Delivered By</label>
-                        <textarea id="deliveredby" name="deliveredby" rows="6" cols="35"></textarea> <br>
-                        <label class="mt-7">Date</label>
-                        <input type="date" id="date5">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row margin-0 submit-button">
-            <button onclick="window.print()">Submit</button>
+        <div class="row margin-0 buttons">
+            <button class="margin-10px" onclick="window.print()">Print</button>
+            <button class="margin-10px" onclick="downloadPDF()">Download</button>
+            <button class="margin-10px" onclick="window.location.reload()">Clear Screen</button>
         </div>
-        <p>** Signature required- Please turn over to other side of this form and read the terms & conditions carefully and sign on the signature box if you agree to proceed with the service.</p>
+        <p style="font-size:14px;"><span style="font-weight:bold">Address: </span> Gali,
+            Behind Bhagyashree Ghee Bhandaar Gol Bazaar,
+            Bazar Ward, Chandrapur,
+            Maharashtra 442402</p>
     </body>
 </html>

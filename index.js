@@ -5,3 +5,16 @@ function addTotal(){
     let num4 = parseInt(document.getElementById("labour").value);
     document.getElementById("total").innerHTML = num1 + num2 + num3 + num4;
 }
+
+function downloadPDF(){
+    var element = document.getElementById('exportToPDF');
+    var opt = {
+        margin:       0.2,
+        filename:     'FormData.pdf',
+        image:        { type: 'jpg', quality: 1 },
+        html2canvas:  { scale: 1 },
+        jsPDF:        { unit: 'in', format: 'ledger', orientation: 'portrait' }
+      }; 
+
+      html2pdf().set(opt).from(element).save();
+}
