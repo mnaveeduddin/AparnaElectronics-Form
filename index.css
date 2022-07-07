@@ -150,7 +150,7 @@ hr{
 }
 
 .signature h6{
-    margin-bottom: 45px !important;
+    margin-top: 25px !important;
 }
 
 .height-49{
@@ -194,4 +194,8 @@ hr{
     border-radius: 10px;
     border:0px;
     padding:5px 10px 5px 10px;
+}
+
+.flex-end{
+    align-items: flex-end;
 }

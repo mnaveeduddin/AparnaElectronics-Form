@@ -7,10 +7,25 @@ function addTotal(){
 }
 
 function downloadPDF(){
+    var name = document.getElementById('contact-name').value;
+
+    // For current date;
+    Date.prototype.today = function () { 
+        return ((this.getDate() < 10)?"0":"") + this.getDate() +"-"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"-"+ this.getFullYear();
+    }
+
+    // For current time;
+    Date.prototype.timeNow = function () {
+         return ((this.getHours() < 10)?"0":"") + this.getHours() +"-"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes();
+    }
+
+    var newDate = new Date();
+    var datetime = newDate.today() + " - " + newDate.timeNow();
+    
     var element = document.getElementById('exportToPDF');
     var opt = {
         margin:       0.2,
-        filename:     'FormData.pdf',
+        filename:     name + "-" + datetime,
         image:        { type: 'jpg', quality: 1 },
         html2canvas:  { scale: 1 },
         jsPDF:        { unit: 'in', format: 'ledger', orientation: 'portrait' }
